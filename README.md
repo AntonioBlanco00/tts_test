@@ -11,15 +11,15 @@ etc/config
 you can find an example of a configuration file. We can find there the following lines:
 ```
 # Endpoints for implements interfaces
-Speech.Endpoints=tcp -p 11339
-
 # Proxies for required interfaces
-EmotionalMotorProxy = emotionalmotor:tcp -h 192.168.16.1 -p 30001  #IP de EBO, será necesario estar conectado a la wifi de EBO
+SpeechProxy = speech:tcp -h localhost -p 11339
+
 
 Ice.Warn.Connections=0
 Ice.Trace.Network=0
 Ice.Trace.Protocol=0
 Ice.MessageSizeMax=20004800
+
 ```
 
 ## Starting the component
