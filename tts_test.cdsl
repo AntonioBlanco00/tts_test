@@ -1,0 +1,12 @@
+import "Speech.idsl";
+
+Component tts_test
+{
+    Communications
+    {
+        requires Speech;
+
+    };
+    language python;
+};
+
