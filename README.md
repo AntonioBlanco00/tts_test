@@ -1,5 +1,6 @@
 # tts_test
-Intro to component here
+Componente para probar el TTS en EBO.
+Envía string al componente "melotts_robolab" para que dicho commponente reproduzca por altavoz el TTS.
 
 
 ## Configuration parameters
@@ -9,7 +10,16 @@ etc/config
 ```
 you can find an example of a configuration file. We can find there the following lines:
 ```
-EXAMPLE HERE
+# Endpoints for implements interfaces
+Speech.Endpoints=tcp -p 11339
+
+# Proxies for required interfaces
+EmotionalMotorProxy = emotionalmotor:tcp -h 192.168.16.1 -p 30001  #IP de EBO, será necesario estar conectado a la wifi de EBO
+
+Ice.Warn.Connections=0
+Ice.Trace.Network=0
+Ice.Trace.Protocol=0
+Ice.MessageSizeMax=20004800
 ```
 
 ## Starting the component
@@ -25,5 +35,5 @@ cp etc/config config
 After editing the new config file we can run the component:
 
 ```
-bin/tts_test config
+src/tts_test.py etc/config
 ```
